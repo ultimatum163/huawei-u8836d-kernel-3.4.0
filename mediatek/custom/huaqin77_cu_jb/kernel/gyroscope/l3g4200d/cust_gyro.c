@@ -1,5 +1,15 @@
 #include <cust_gyro.h>
+#include <linux/types.h>
+
+#ifdef MT6573
+#include <mach/mt6573_pll.h>
+#endif
+
+#ifdef MT6577
+#include <mach/mt_typedefs.h>
 #include <mach/mt_pm_ldo.h>
+#endif
+
 /*---------------------------------------------------------------------------*/
 int cust_gyro_power(struct gyro_hw *hw, unsigned int on, char* devname)
 {

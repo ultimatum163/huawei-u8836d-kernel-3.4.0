@@ -1,4 +1,5 @@
 #define ACCDET_EINT
+//#define ACCDET_MULTI_KEY_FEATURE
 
 #ifdef ACCDET_EINT
 #define ACCDET_DELAY_ENABLE_TIME 500 //delay 500ms to enable accdet after EINT 
@@ -32,15 +33,23 @@ struct headset_mode_settings{
 
 
 //remote button customization: long press time
-int long_press_time = 2000;
+int long_press_time = 1000;
 
-
+#if 0
 //headset mode register settings(for MT6575)
 struct headset_mode_settings cust_headset_settings = {
 	0x1900, 0x140, 1, 0x12c, 0x3000, 0x3000, 0x400
 };
-
-
+#else
+/*
+struct headset_mode_settings cust_headset_settings = {
+	0x900, 0x140, 1, 0x1, 0x800, 0x800, 0x20
+};
+*/
+struct headset_mode_settings cust_headset_settings = {
+	0x900, 0x140, 1, 0x1, 0x400, 0x400, 0x20
+};
+#endif
 
 #ifdef MTK_TVOUT_SUPPORT
 #define TV_OUT_SUPPORT

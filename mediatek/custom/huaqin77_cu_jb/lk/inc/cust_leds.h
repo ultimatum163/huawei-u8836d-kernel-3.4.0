@@ -10,8 +10,6 @@ enum mt65xx_led_type
 	MT65XX_LED_TYPE_KEYBOARD,
 	MT65XX_LED_TYPE_BUTTON,	
 	MT65XX_LED_TYPE_LCD,
-	MT65XX_LED_TYPE_TORCH,
-    MT65XX_LED_TYPE_FLASH_LIGHT,
 	MT65XX_LED_TYPE_TOTAL,
 };
 
@@ -26,14 +24,15 @@ enum mt65xx_led_mode
 
 enum mt65xx_led_pmic
 {
-	MT65XX_LED_PMIC_NLED_ISINK0=0,
+	MT65XX_LED_PMIC_BUTTON=0,
 	MT65XX_LED_PMIC_LCD,
 	MT65XX_LED_PMIC_LCD_ISINK,
 	MT65XX_LED_PMIC_LCD_BOOST,
 	MT65XX_LED_PMIC_NLED_ISINK4,
-	MT65XX_LED_PMIC_NLED_ISINK5,
-	MT65XX_LED_PMIC_BUTTON
+	MT65XX_LED_PMIC_NLED_ISINK5
 };
+
+typedef int (*cust_brightness_set)(int level);
 struct PWM_config
 {
 	int clock_source;
@@ -41,7 +40,6 @@ struct PWM_config
 	int low_duration;
 	int High_duration;
 };
-typedef int (*cust_brightness_set)(int level);
 
 /*
  * name : must the same as lights HAL
@@ -56,18 +54,10 @@ struct cust_mt65xx_led {
 	char                 *name;
 	enum mt65xx_led_mode  mode;
 	int                   data;
- struct PWM_config config_data;
+        struct PWM_config config_data;
 };
 
 extern struct cust_mt65xx_led *get_cust_led_list(void);
 
-struct mt65xx_led_data {
-	struct cust_mt65xx_led cust;
-	int type;
-//	struct work_struct work;
-	int level;
-	int delay_on;
-	int delay_off;
-};
 #endif
 

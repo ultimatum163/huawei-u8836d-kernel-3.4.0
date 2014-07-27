@@ -35,7 +35,7 @@ typedef struct{
 #define ERR_CHARGE_TEMPERATURE  0xFF
 
 /* Recharging Battery Voltage */
-#define RECHARGING_VOLTAGE      4130
+#define RECHARGING_VOLTAGE      4110
 
 /* Charging Current Setting */
 #define USB_CHARGER_CURRENT					Cust_CC_450MA
@@ -89,7 +89,7 @@ VBAT_TO_PERCENT Batt_VoltToPercent_Table[] = {
 //#define TBAT_OVER_CRITICAL_LOW     68237
 //#define TBAT_OVER_CRITICAL_LOW     483954
 #define TBAT_OVER_CRITICAL_LOW     70603
-#define BAT_TEMP_PROTECT_ENABLE    1
+#define BAT_TEMP_PROTECT_ENABLE    0
 #define BAT_NTC_10 0
 #define BAT_NTC_47 0
 #define BAT_NTC_TSM_1

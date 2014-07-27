@@ -8,7 +8,7 @@
 #define USB_VERSIONID		(0x0100)
 #define USB_MANUFACTURER	"MediaTek"
 #define USB_PRODUCT_NAME	"Android"
-#define FASTBOOT_DEVNAME	"Huiwei U8836D"
+#define FASTBOOT_DEVNAME	"mt6577_phone"
 #define SN_BUF_LEN		19
 
 #endif /* __CUST_USB_H__ */
