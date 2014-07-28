@@ -72,7 +72,7 @@ static int cpu_ss_period_s = 0;
 static int cpu_ss_period_ns = 100;
 static int cpu_ss_timer_flag = 0;
 
-static bool cpu_ss_debug_mode = true;//false;
+static bool cpu_ss_debug_mode = false;
 static bool cpu_ss_period_mode = false;
 /*******************************************
  * Add for CPU CLKSQ <-> ARMPLL stress end
@@ -167,7 +167,7 @@ static unsigned int g_limited_min_freq;
 
 static int g_ramp_down_count = 0;
 
-static bool mtk_cpufreq_debug = true;//false;
+static bool mtk_cpufreq_debug = false;
 static bool mtk_cpufreq_ready = false;
 static bool mtk_cpufreq_pause = false;
 
